@@ -17,7 +17,7 @@ function App() {
     return (
       <div className="App">
         <h1>Hi</h1>
-        <p>data from api is...{data}!!!</p>
+        <p>data from api is...{data}</p>
       </div>
     );
   } else {
