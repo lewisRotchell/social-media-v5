@@ -21,13 +21,13 @@ const main = () => __awaiter(void 0, void 0, void 0, function* () {
     app.get("/api", (_, res) => {
         res.json({ msg: "hello from the server" });
     });
+    app.use("/api/users", users_1.default);
     if (process.env.NODE_ENV === "production") {
         app.use(express_1.default.static("client/build"));
         app.get("*", (_, res) => {
             res.sendFile(path_1.default.resolve(__dirname, "client", "build", "index.html"));
         });
     }
-    app.use("/api/users", users_1.default);
     app.listen(process.env.PORT || 4000, () => {
         console.log("server started!");
     });
