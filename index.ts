@@ -11,6 +11,8 @@ const main = async () => {
     res.json({ msg: "hello from the server" });
   });
 
+  app.use("/api/users", users);
+
   //serve static assets in production
   if (process.env.NODE_ENV === "production") {
     //set static folder
@@ -20,8 +22,6 @@ const main = async () => {
       res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
   }
-
-  app.use("/api/users", users);
 
   app.listen(process.env.PORT || 4000, () => {
     console.log("server started!");
