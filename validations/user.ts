@@ -4,7 +4,7 @@ import { check, validationResult } from "express-validator";
 
 const { users } = new PrismaClient();
 
-export const validateUser = [
+export const validateRegister = [
   check("email")
     .escape()
     .trim()
