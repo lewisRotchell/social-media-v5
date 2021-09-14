@@ -14,8 +14,9 @@ model Users {
 id Int @default(autoincrement()) @id
 email String @unique @db.VarChar(16)
 username String @db.VarChar(16) @unique
+password String 
 isAdmin Boolean @default(false)
-tokenVersion Int @default(0)
+tokenVersion Int @default(0) 
 posts Post[]
 }
 

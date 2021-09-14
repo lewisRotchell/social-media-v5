@@ -1,6 +1,7 @@
 import express, { Application, Response } from "express";
 import path from "path";
 import users from "./routes/users";
+import auth from "./routes/auth";
 
 const main = async () => {
   const app: Application = express();
@@ -12,6 +13,7 @@ const main = async () => {
   });
 
   app.use("/api/users", users);
+  app.use("/api/auth", auth);
 
   //serve static assets in production
   if (process.env.NODE_ENV === "production") {
